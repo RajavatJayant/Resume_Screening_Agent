@@ -1,0 +1,39 @@
+# ============================================================
+# Resume Screening Agent — requirements.txt
+# Install: pip install -r requirements.txt
+# ============================================================
+
+# ── Web UI ───────────────────────────────────────────────────
+streamlit>=1.35.0
+
+# ── PDF reading ──────────────────────────────────────────────
+pymupdf>=1.23.0                  # fitz — extract text from PDFs
+
+# ── Sentence Embeddings (SentenceTransformer) ────────────────
+sentence-transformers>=2.7.0     # SentenceTransformer("all-MiniLM-L6-v2")
+torch>=2.0.0                     # Required by sentence-transformers
+transformers>=4.30.0             # Required by sentence-transformers
+tokenizers>=0.13.0               # Required by transformers
+
+# ── Vector Search ────────────────────────────────────────────
+faiss-cpu>=1.7.4                 # Facebook AI Similarity Search
+
+# ── Numerical Computing ──────────────────────────────────────
+numpy>=1.24.0                    # Required by FAISS and sentence-transformers
+
+# ── LangChain (v0.2+ / LCEL style) ──────────────────────────
+langchain>=0.2.0
+langchain-core>=0.2.0
+langchain-community>=0.2.0
+langchain-text-splitters>=0.2.0  # RecursiveCharacterTextSplitter
+langchain-google-genai>=1.0.0    # ChatGoogleGenerativeAI
+
+# ── Google Gemini ────────────────────────────────────────────
+google-generativeai>=0.5.0       # Gemini API SDK
+
+# ── Environment Variables ────────────────────────────────────
+python-dotenv>=1.0.0             # load_dotenv() reads .env file
+
+# ── HTTP / gRPC (needed by google-generativeai) ──────────────
+grpcio>=1.50.0
+protobuf>=4.21.0
